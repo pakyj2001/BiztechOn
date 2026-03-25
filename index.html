@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All | BiztechOn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --header-h: 80px; --bg: #fff; --text: #111; --sub: #888; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        header { width: 100%; height: var(--header-h); display: flex; justify-content: space-between; align-items: center; padding: 0 4%; position: fixed; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #f0f0f0; }
+        .logo { font-family: 'Montserrat'; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.5px; }
+        nav ul { display: flex; list-style: none; gap: 35px; }
+        nav ul li a { font-family: 'Montserrat'; font-size: 0.8rem; text-transform: uppercase; color: var(--sub); letter-spacing: 1px; }
+        nav ul li a.active { color: #000; font-weight: 700; }
+        .hero { padding: 240px 4% 140px; }
+        .hero span { font-family: 'Montserrat'; font-size: 0.85rem; letter-spacing: 4px; color: var(--sub); text-transform: uppercase; display: block; margin-bottom: 25px; }
+        .hero h1 { font-family: 'Montserrat'; font-size: clamp(3.5rem, 12vw, 8.5rem); font-weight: 700; line-height: 0.9; letter-spacing: -5px; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 80px 40px; padding: 0 4% 100px; max-width: 1600px; margin: 0 auto; }
+        .img-box { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #f7f7f7; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .item:hover img { transform: scale(1.05); }
+        .info { margin-top: 25px; }
+        .info span { font-family: 'Montserrat'; font-size: 0.7rem; color: var(--sub); text-transform: uppercase; letter-spacing: 2px; }
+        .info h3 { font-family: 'Montserrat'; font-size: 1.2rem; font-weight: 700; margin-top: 8px; }
+        footer { padding: 60px 4%; text-align: center; border-top: 1px solid #eee; font-family: 'Montserrat'; font-size: 0.7rem; color: #ccc; letter-spacing: 1px; }
+        @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .hero h1 { font-size: 4rem; letter-spacing: -2px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">BiztechOn</a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">All</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="design.html">Design</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <span>Digital Transformation & Visual Solution</span>
+        <h1>BiztechOn</h1>
+    </section>
+    <main class="grid">
+        <a href="video.html" class="item">
+            <div class="img-box"><img src="https://via.placeholder.com/1280x720/111" alt=""></div>
+            <div class="info"><span>Video</span><h3>The Future of Biztech</h3></div>
+        </a>
+        <a href="design.html" class="item">
+            <div class="img-box"><img src="https://via.placeholder.com/1280x720/eee" alt=""></div>
+            <div class="info"><span>Design</span><h3>On-Visual Identity</h3></div>
+        </a>
+    </main>
+    <footer>&copy; 2026 BiztechOn. ALL RIGHTS RESERVED.</footer>
+</body>
+</html>
