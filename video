@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video | BiztechOn</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+       :root { --header-h: 80px; --sub: #888; }
+       * { margin: 0; padding: 0; box-sizing: border-box; }
+       body { font-family: 'Noto Sans KR', sans-serif; background: #fff; color: #111; line-height: 1.5; }
+       a { text-decoration: none; color: inherit; transition: 0.3s; }
+       /* 고정 헤더 */
+       header { width: 100%; height: var(--header-h); display: flex; justify-content: space-between; align-items: center; padding: 0 4%; position: fixed; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #f0f0f0; }
+       .logo { font-family: 'Montserrat'; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.5px; }
+       nav ul { display: flex; list-style: none; gap: 35px; }
+       nav ul li a { font-family: 'Montserrat'; font-size: 0.8rem; text-transform: uppercase; color: var(--sub); letter-spacing: 1px; }
+       nav ul li a.active { color: #000; font-weight: 700; }
+       /* 메인 영역 */
+       main { padding: calc(var(--header-h) + 60px) 4% 100px; max-width: 1600px; margin: 0 auto; }
+       h1.page-title { font-family: 'Montserrat'; font-size: 3rem; margin-bottom: 60px; font-weight: 700; letter-spacing: -1px; }
+       /* 3x3 그리드 */
+       .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px 30px; }
+       .video-item { cursor: pointer; }
+       .thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: #000; }
+       .thumb-wrap img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: 0.5s; }
+       .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 55px; height: 55px; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border-radius: 50%; display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
+       .play-btn svg { width: 22px; fill: #fff; margin-left: 3px; }
+       .video-item:hover .thumb-wrap img { transform: scale(1.05); opacity: 0.7; }
+       .video-item:hover .play-btn { opacity: 1; }
+       .v-info { margin-top: 20px; }
+       .v-info span { font-family: 'Montserrat'; font-size: 0.65rem; color: var(--sub); text-transform: uppercase; letter-spacing: 2px; }
+       .v-info h3 { font-family: 'Montserrat'; font-size: 1.1rem; font-weight: 700; margin: 6px 0 10px; }
+       .v-info p { font-size: 0.85rem; color: #666; line-height: 1.6; font-weight: 300; word-break: keep-all; }
+       /* 비디오 모달 */
+       .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center; }
+       .modal-content { width: 90%; max-width: 1200px; aspect-ratio: 16/9; }
+       .modal-content iframe { width: 100%; height: 100%; }
+       .close { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 40px; cursor: pointer; }
+       /* 푸터 */
+       footer { padding: 60px 4%; text-align: center; border-top: 1px solid #eee; font-family: 'Montserrat'; font-size: 0.7rem; color: #ccc; letter-spacing: 1px; }
+       /* 반응형 */
+       @media (max-width: 1100px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
+       @media (max-width: 700px) { .video-grid { grid-template-columns: 1fr; } .page-title { font-size: 2.2rem; } }
+</style>
+</head>
+<body>
+<header>
+<a href="index.html" class="logo">BiztechOn</a>
+<nav>
+<ul>
+<li><a href="index.html">All</a></li>
+<li><a href="video.html" class="active">Video</a></li>
+<li><a href="design.html">Design</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<h1 class="page-title">VIDEO</h1>
+<div class="video-grid">
+<div class="video-item" onclick="openV('dQw4w9WgXcQ')">
+<div class="thumb-wrap">
+<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+<div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+</div>
+<div class="v-info">
+<span>Commercial / 01</span>
+<h3>Project Title 01</h3>
+<p>영상에 대한 설명을 이곳에 적어주세요. 프로젝트의 핵심 내용을 짧게 요약합니다.</p>
+</div>
+</div>
+<div class="video-item" onclick="openV('dQw4w9WgXcQ')">
+<div class="thumb-wrap">
+<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+<div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+</div>
+<div class="v-info">
+<span>Commercial / 02</span>
+<h3>Project Title 02</h3>
+<p>영상에 대한 설명을 이곳에 적어주세요. 프로젝트의 핵심 내용을 짧게 요약합니다.</p>
+</div>
+</div>
+<div class="video-item" onclick="openV('dQw4w9WgXcQ')">
+<div class="thumb-wrap">
+<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+<div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+</div>
+<div class="v-info">
+<span>Commercial / 03</span>
+<h3>Project Title 03</h3>
+<p>영상에 대한 설명을 이곳에 적어주세요. 프로젝트의 핵심 내용을 짧게 요약합니다.</p>
+</div>
+</div>
+<div class="video-item" onclick="openV('dQw4w9WgXcQ')">
+<div class="thumb-wrap">
+<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+<div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+</div>
+<div class="v-info">
+<span>Commercial / 04</span>
+<h3>Project Title 04</h3>
+<p>영상에 대한 설명을 이곳에 적어주세요. 프로젝트의 핵심 내용을 짧게 요약합니다.</p>
+</div>
+</div>
+<div class="video-item" onclick="openV('dQw4w9WgXcQ')">
+<div class="thumb-wrap">
+<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+<div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+</div>
+<div class="v-info">
+<span>Commercial / 05</span>
+<h3>Project Title 05</h3>
+<p>영상에 대한 설명을 이곳에 적어주세요. 프로젝트의 핵심 내용을 짧게 요약합니다.</p>
+</div>
+</div>
+<div class="video-item" onclick="openV('dQw4w9WgXcQ')">
+<div class="thumb-wrap">
+<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+<div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+</div>
+<div class="v-info">
+<span>Commercial / 06</span>
+<h3>Project Title 06</h3>
+<p>영상에 대한 설명을 이곳에 적어주세요. 프로젝트의 핵심 내용을 짧게 요약합니다.</p>
+</div>
+</div>
+<div class="video-item" onclick="openV('dQw4w9WgXcQ')">
+<div class="thumb-wrap">
+<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+<div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+</div>
+<div class="v-info">
+<span>Commercial / 07</span>
+<h3>Project Title 07</h3>
+<p>영상에 대한 설명을 이곳에 적어주세요. 프로젝트의 핵심 내용을 짧게 요약합니다.</p>
+</div>
+</div>
+<div class="video-item" onclick="openV('dQw4w9WgXcQ')">
+<div class="thumb-wrap">
+<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+<div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+</div>
+<div class="v-info">
+<span>Commercial / 08</span>
+<h3>Project Title 08</h3>
+<p>영상에 대한 설명을 이곳에 적어주세요. 프로젝트의 핵심 내용을 짧게 요약합니다.</p>
+</div>
+</div>
+<div class="video-item" onclick="openV('dQw4w9WgXcQ')">
+<div class="thumb-wrap">
+<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="">
+<div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+</div>
+<div class="v-info">
+<span>Commercial / 09</span>
+<h3>Project Title 09</h3>
+<p>영상에 대한 설명을 이곳에 적어주세요. 프로젝트의 핵심 내용을 짧게 요약합니다.</p>
+</div>
+</div>
+</div>
+</main>
+<div id="vM" class="modal" onclick="closeV()">
+<span class="close">&times;</span>
+<div class="modal-content">
+<iframe id="vP" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+</div>
+<footer>&copy; 2026 BiztechOn. ALL RIGHTS RESERVED.</footer>
+<script>
+       function openV(id) {
+           const url = `https://www.youtube.com/embed/${id}?autoplay=1`;
+           document.getElementById('vP').src = url;
+           document.getElementById('vM').style.display = 'flex';
+           document.body.style.overflow = 'hidden';
+       }
+       function closeV() {
+           document.getElementById('vP').src = "";
+           document.getElementById('vM').style.display = 'none';
+           document.body.style.overflow = 'auto';
+       }
+</script>
+</body>
+</html>
