@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | BiztechOn</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+       :root { --header-h: 80px; --sub: #888; }
+       * { margin: 0; padding: 0; box-sizing: border-box; }
+       body { font-family: 'Noto Sans KR', sans-serif; background: #fff; color: #111; }
+       a { text-decoration: none; color: inherit; transition: 0.3s; }
+       header { width: 100%; height: var(--header-h); display: flex; justify-content: space-between; align-items: center; padding: 0 4%; position: fixed; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #f0f0f0; }
+       .logo { font-family: 'Montserrat'; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.5px; }
+       nav ul { display: flex; list-style: none; gap: 35px; }
+       nav ul li a { font-family: 'Montserrat'; font-size: 0.8rem; text-transform: uppercase; color: var(--sub); letter-spacing: 1px; }
+       nav ul li a.active { color: #000; font-weight: 700; }
+       main { padding: calc(var(--header-h) + 100px) 4% 150px; max-width: 1200px; margin: 0 auto; min-height: calc(100vh - 200px); }
+       .c-wrap { display: flex; gap: 100px; justify-content: space-between; }
+       .c-info { flex: 1; }
+       .c-info h1 { font-family: 'Montserrat'; font-size: 4rem; font-weight: 700; line-height: 1.1; margin-bottom: 40px; }
+       .i-item { margin-bottom: 30px; }
+       .i-item span { font-family: 'Montserrat'; font-size: 0.7rem; text-transform: uppercase; color: #bbb; display: block; margin-bottom: 5px; }
+       .i-item a { font-family: 'Montserrat'; font-size: 1.2rem; font-weight: 500; border-bottom: 1px solid transparent; }
+       .i-item a:hover { border-bottom: 1px solid #000; }
+       .c-form { flex: 1; }
+       .f-group { margin-bottom: 40px; }
+       .f-group label { font-family: 'Montserrat'; font-size: 0.75rem; text-transform: uppercase; display: block; margin-bottom: 10px; }
+       .f-group input, .f-group textarea { width: 100%; padding: 15px 0; border: none; border-bottom: 1px solid #ddd; font-size: 1rem; outline: none; transition: 0.3s; }
+       .f-group input:focus, .f-group textarea:focus { border-bottom: 1px solid #000; }
+       .btn { background: #000; color: #fff; padding: 20px 60px; border: none; font-family: 'Montserrat'; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; cursor: pointer; }
+       footer { padding: 60px 4%; text-align: center; border-top: 1px solid #eee; font-family: 'Montserrat'; font-size: 0.7rem; color: #ccc; letter-spacing: 1px; }
+       @media (max-width: 900px) { .c-wrap { flex-direction: column; gap: 60px; } .c-info h1 { font-size: 3rem; } }
+</style>
+</head>
+<body>
+<header><a href="index.html" class="logo">BiztechOn</a><nav><ul><li><a href="index.html">All</a></li><li><a href="video.html">Video</a></li><li><a href="design.html">Design</a></li><li><a href="contact.html" class="active">Contact</a></li></ul></nav></header>
+<main><div class="c-wrap"><div class="c-info"><h1>LET'S<br>WORK.</h1><div class="i-item"><span>Email</span><a href="mailto:hello@biztechon.com">hello@biztechon.com</a></div><div class="i-item"><span>Location</span><p style="margin-top:5px; font-weight:500;">Seoul, South Korea</p></div></div><div class="c-form"><form onsubmit="alert('메시지가 전송되었습니다!'); return false;"><div class="f-group"><label>Name</label><input type="text" required></div><div class="f-group"><label>Email</label><input type="email" required></div><div class="f-group"><label>Message</label><textarea required></textarea></div><button class="btn">Send Message</button></form></div></div></main>
+<footer>&copy; 2026 BiztechOn. ALL RIGHTS RESERVED.</footer>
+</body>
+</html>
