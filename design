@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design | BiztechOn</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+       :root { --header-h: 80px; --sub: #888; }
+       * { margin: 0; padding: 0; box-sizing: border-box; }
+       body { font-family: 'Noto Sans KR', sans-serif; background: #fff; color: #111; line-height: 1.5; }
+       a { text-decoration: none; color: inherit; transition: 0.3s; }
+       /* 고정 헤더 */
+       header { width: 100%; height: var(--header-h); display: flex; justify-content: space-between; align-items: center; padding: 0 4%; position: fixed; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #f0f0f0; }
+       .logo { font-family: 'Montserrat'; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.5px; }
+       nav ul { display: flex; list-style: none; gap: 35px; }
+       nav ul li a { font-family: 'Montserrat'; font-size: 0.8rem; text-transform: uppercase; color: var(--sub); letter-spacing: 1px; }
+       nav ul li a.active { color: #000; font-weight: 700; }
+       /* 메인 컨텐츠 영역 */
+       main { padding: calc(var(--header-h) + 60px) 4% 100px; max-width: 1400px; margin: 0 auto; }
+       h1.page-title { font-family: 'Montserrat'; font-size: 3rem; margin-bottom: 60px; font-weight: 700; letter-spacing: -1px; }
+       /* 3x3 디자인 그리드 */
+       .design-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px 30px; }
+       .design-item { cursor: pointer; }
+       /* 이미지 박스 (세로형 3:4 비율) */
+       .img-wrap { width: 100%; aspect-ratio: 3 / 4; overflow: hidden; background: #f7f7f7; }
+       .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+       .design-item:hover img { transform: scale(1.08); }
+       .d-info { margin-top: 20px; }
+       .d-info span { font-family: 'Montserrat'; font-size: 0.65rem; color: var(--sub); text-transform: uppercase; letter-spacing: 2px; }
+       .d-info h3 { font-family: 'Montserrat'; font-size: 1.05rem; font-weight: 700; margin: 6px 0 8px; }
+       .d-info p { font-size: 0.85rem; color: #777; line-height: 1.6; font-weight: 300; word-break: keep-all; }
+       /* 이미지 라이트박스 (클릭 시 크게 보기) */
+       .img-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.98); z-index: 2000; justify-content: center; align-items: center; cursor: zoom-out; }
+       .img-modal img { max-width: 90%; max-height: 85vh; object-fit: contain; box-shadow: 0 20px 50px rgba(0,0,0,0.1); animation: fadeIn 0.4s ease; }
+       .close-modal { position: absolute; top: 30px; right: 40px; color: #111; font-size: 40px; cursor: pointer; }
+       @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+       /* 푸터 */
+       footer { padding: 60px 4%; text-align: center; border-top: 1px solid #eee; font-family: 'Montserrat'; font-size: 0.7rem; color: #ccc; letter-spacing: 1px; }
+       /* 반응형 설정 */
+       @media (max-width: 1024px) { .design-grid { grid-template-columns: repeat(2, 1fr); } }
+       @media (max-width: 650px) { .design-grid { grid-template-columns: 1fr; } .page-title { font-size: 2.2rem; } }
+</style>
+</head>
+<body>
+<header>
+<a href="index.html" class="logo">BiztechOn</a>
+<nav>
+<ul>
+<li><a href="index.html">All</a></li>
+<li><a href="video.html">Video</a></li>
+<li><a href="design.html" class="active">Design</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<h1 class="page-title">DESIGN</h1>
+<div class="design-grid">
+<div class="design-item" onclick="openI('https://via.placeholder.com/900x1200/eee/333?text=Design+01')">
+<div class="img-wrap">
+<img src="https://via.placeholder.com/600x800/eee/333?text=Design+01" alt="">
+</div>
+<div class="d-info">
+<span>Graphic / 01</span>
+<h3>Visual Identity System</h3>
+<p>브랜드의 핵심 가치를 담은 시각 언어 가이드라인입니다.</p>
+</div>
+</div>
+<div class="design-item" onclick="openI('https://via.placeholder.com/900x1200/ddd/333?text=Design+02')">
+<div class="img-wrap">
+<img src="https://via.placeholder.com/600x800/ddd/333?text=Design+02" alt="">
+</div>
+<div class="d-info">
+<span>Branding / 02</span>
+<h3>Creative Package Design</h3>
+<p>제품의 특성을 살린 친환경 패키지 디자인 프로젝트입니다.</p>
+</div>
+</div>
+<div class="design-item" onclick="openI('https://via.placeholder.com/900x1200/ccc/333?text=Design+03')">
+<div class="img-wrap">
+<img src="https://via.placeholder.com/600x800/ccc/333?text=Design+03" alt="">
+</div>
+<div class="d-info">
+<span>Editorial / 03</span>
+<h3>Annual Archive Book</h3>
+<p>1년간의 프로젝트를 기록한 에디토리얼 디자인입니다.</p>
+</div>
+</div>
+<div class="design-item" onclick="openI('https://via.placeholder.com/900x1200/bbb/333?text=Design+04')">
+<div class="img-wrap">
+<img src="https://via.placeholder.com/600x800/bbb/333?text=Design+04" alt="">
+</div>
+<div class="d-info">
+<span>Web / 04</span>
+<h3>UX/UI Solution Design</h3>
+<p>사용자 경험을 최적화한 모바일 앱 인터페이스 설계입니다.</p>
+</div>
+</div>
+<div class="design-item" onclick="openI('https://via.placeholder.com/900x1200/aaa/333?text=Design+05')">
+<div class="img-wrap">
+<img src="https://via.placeholder.com/600x800/aaa/333?text=Design+05" alt="">
+</div>
+<div class="d-info">
+<span>Poster / 05</span>
+<h3>Exhibition Main Visual</h3>
+<p>현대 미술 전시회를 위한 메인 포스터 디자인입니다.</p>
+</div>
+</div>
+<div class="design-item" onclick="openI('https://via.placeholder.com/900x1200/999/333?text=Design+06')">
+<div class="img-wrap">
+<img src="https://via.placeholder.com/600x800/999/333?text=Design+06" alt="">
+</div>
+<div class="d-info">
+<span>Branding / 06</span>
+<h3>Startup Logo Identity</h3>
+<p>신규 스타트업을 위한 심볼 및 타이포그래피 작업입니다.</p>
+</div>
+</div>
+<div class="design-item" onclick="openI('https://via.placeholder.com/900x1200/888/333?text=Design+07')">
+<div class="img-wrap">
+<img src="https://via.placeholder.com/600x800/888/333?text=Design+07" alt="">
+</div>
+<div class="d-info">
+<span>Graphic / 07</span>
+<h3>Abstract Art Poster</h3>
+<p>기하학적 도형을 활용한 실험적 그래픽 포스터입니다.</p>
+</div>
+</div>
+<div class="design-item" onclick="openI('https://via.placeholder.com/900x1200/777/333?text=Design+08')">
+<div class="img-wrap">
+<img src="https://via.placeholder.com/600x800/777/333?text=Design+08" alt="">
+</div>
+<div class="d-info">
+<span>Logo / 08</span>
+<h3>Typo Branding System</h3>
+<p>글자 중심의 간결하고 강렬한 브랜드 마크 디자인입니다.</p>
+</div>
+</div>
+<div class="design-item" onclick="openI('https://via.placeholder.com/900x1200/666/333?text=Design+09')">
+<div class="img-wrap">
+<img src="https://via.placeholder.com/600x800/666/333?text=Design+09" alt="">
+</div>
+<div class="d-info">
+<span>Web / 09</span>
+<h3>Digital Portfolio Web</h3>
+<p>크리에이터를 위한 웹 포트폴리오 사이트 디자인입니다.</p>
+</div>
+</div>
+</div>
+</main>
+<div id="iM" class="img-modal" onclick="closeI()">
+<span class="close-modal">&times;</span>
+<img id="iT" src="" alt="">
+</div>
+<footer>&copy; 2026 BiztechOn. ALL RIGHTS RESERVED.</footer>
+<script>
+       function openI(src) {
+           document.getElementById('iT').src = src;
+           document.getElementById('iM').style.display = 'flex';
+           document.body.style.overflow = 'hidden';
+       }
+       function closeI() {
+           document.getElementById('iM').style.display = 'none';
+           document.body.style.overflow = 'auto';
+       }
+</script>
+</body>
+</html>
