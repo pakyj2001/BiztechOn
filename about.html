@@ -1,222 +1,203 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | BiztechOn</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | BiztechOn</title>
 
-    https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap
+<!-- ✅ Google Fonts (정상 로딩) -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --header-h: 80px;
-            --bg: #fff;
-            --text: #111;
-            --sub: #888;
-        }
+<style>
+/* ================= Reset ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #111;
+    line-height: 1.6;
+    background: #fff;
+}
 
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        a { text-decoration: none; color: inherit; }
+/* ================= Header ================= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
 
-        /* ================= Header ================= */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: var(--header-h);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 4%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #eee;
-            z-index: 1000;
-        }
+.logo {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.25rem;
+}
 
-        .logo {
-            font-family: 'Montserrat';
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 35px;
-        }
+nav ul li a {
+    font-family: 'Montserrat';
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #888;
+}
 
-        nav ul li a {
-            font-family: 'Montserrat';
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--sub);
-        }
+nav ul li a.active {
+    color: #000;
+    font-weight: 700;
+}
 
-        nav ul li a.active {
-            color: #000;
-            font-weight: 700;
-        }
+/* ================= Hero ================= */
+.hero {
+    padding: 200px 4% 120px;
+}
 
-        /* ================= Hero ================= */
-        .hero {
-            padding: 220px 4% 120px;
-        }
+.hero span {
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: #888;
+    text-transform: uppercase;
+}
 
-        .hero span {
-            display: block;
-            font-family: 'Montserrat';
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            color: var(--sub);
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
+.hero h1 {
+    font-family: 'Montserrat';
+    font-size: 4rem;
+    margin-top: 16px;
+}
 
-        .hero h1 {
-            font-family: 'Montserrat';
-            font-size: clamp(3rem, 10vw, 6rem);
-            font-weight: 700;
-            letter-spacing: -3px;
-        }
+/* ================= Content ================= */
+.about {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4% 120px;
+}
 
-        /* ================= About ================= */
-        .about {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 4% 120px;
-        }
+.section {
+    margin-bottom: 100px;
+}
 
-        .section {
-            margin-bottom: 100px;
-        }
+.section h2 {
+    font-family: 'Montserrat';
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
 
-        .section h2 {
-            font-family: 'Montserrat';
-            font-size: 2rem;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
+.section p {
+    max-width: 720px;
+    color: #444;
+}
 
-        .section p {
-            max-width: 680px;
-            font-size: 0.95rem;
-            color: #444;
-        }
+/* ================= Footer ================= */
+footer {
+    padding: 60px 4%;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-family: 'Montserrat';
+    font-size: 0.7rem;
+    color: #999;
+    letter-spacing: 1px;
+}
 
-        .values {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 60px;
-            margin-top: 40px;
-        }
+/* ================= Mobile Bottom Nav ================= */
+.mobile-nav {
+    display: none;
+}
 
-        .value-item span {
-            font-family: 'Montserrat';
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--sub);
-        }
+@media (max-width: 900px) {
+    header nav {
+        display: none;
+    }
 
-        .value-item h3 {
-            font-family: 'Montserrat';
-            font-size: 1.1rem;
-            margin: 10px 0;
-        }
+    .mobile-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 56px;
+        background: #fff;
+        border-top: 1px solid #eee;
+        z-index: 1000;
+    }
 
-        .value-item p {
-            font-size: 0.85rem;
-            color: #555;
-        }
+    .mobile-nav a {
+        flex: 1;
+        text-align: center;
+        line-height: 56px;
+        font-family: 'Montserrat';
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #aaa;
+    }
 
-        /* ================= Footer ================= */
-        footer {
-            padding: 60px 4%;
-            text-align: center;
-            border-top: 1px solid #eee;
-            font-family: 'Montserrat';
-            font-size: 0.7rem;
-            color: #ccc;
-            letter-spacing: 1px;
-        }
+    .mobile-nav a.active {
+        color: #000;
+        font-weight: 700;
+    }
 
-        /* ================= Mobile Bottom Nav ================= */
-        .mobile-nav { display: none; }
-
-        @media (max-width: 900px) {
-            header nav { display: none; }
-            .values { grid-template-columns: 1fr; }
-
-            .mobile-nav {
-                display: flex;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 56px;
-                background: rgba(255,255,255,0.98);
-                border-top: 1px solid #e5e5e5;
-                z-index: 2000;
-            }
-
-            .mobile-nav a {
-                flex: 1;
-                text-align: center;
-                line-height: 56px;
-                font-family: 'Montserrat';
-                font-size: 0.65rem;
-                text-transform: uppercase;
-                color: #aaa;
-            }
-
-            .mobile-nav a.active {
-                color: #000;
-                font-weight: 700;
-            }
-
-            body { padding-bottom: 60px; }
-        }
-    </style>
+    body {
+        padding-bottom: 60px; /* ✅ 하단 바 + 카피 가림 방지 */
+    }
+}
+</style>
 </head>
 
 <body>
 
+<!-- ================= Header ================= -->
 <header>
-    index.html
+    <a href="index.html" class="logo">BiztechOn</a>
     <nav>
         <ul>
-            <li>index.html</li>
-            <li>about.html</li>
-            <li>video.htmlVideo</a></li>
-            <li>design.html></li>
-            <li>contact.html</li>
+            <li><a href="index.html">All</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="design.html">Design</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
 
+<!-- ================= Hero ================= -->
 <section class="hero">
     <span>Who We Are</span>
     <h1>About</h1>
 </section>
 
+<!-- ================= Main ================= -->
 <main class="about">
 
     <section class="section">
         <h2>BiztechOn</h2>
         <p>
-            BiztechOn은 디지털 기술과 비주얼 커뮤니케이션을 기반으로  
-            기업의 메시지를 명확하고 효과적으로 전달하는  
+            BiztechOn은 디지털 기술과 비주얼 커뮤니케이션을 기반으로<br>
+            기업의 메시지를 명확하고 효과적으로 전달하는<br>
             Digital Transformation & Visual Solution 파트너입니다.
         </p>
     </section>
@@ -224,56 +205,18 @@
     <section class="section">
         <h2>What We Do</h2>
         <p>
-            브랜드 필름, 서비스 소개 영상, 비주얼 아이덴티티,
-            디자인 콘텐츠를 통해  
-            비즈니스의 본질을 직관적인 형태로 전달합니다.
+            브랜드 필름, 서비스 소개 영상, 비주얼 아이덴티티,<br>
+            UI/UX 디자인과 그래픽 콘텐츠를 통해<br>
+            비즈니스의 본질을 직관적인 경험으로 재구성합니다.
         </p>
-    </section>
-
-    <section class="section">
-        <h2>Our Values</h2>
-        <div class="values">
-            <div class="value-item">
-                <span>Clarity</span>
-                <h3>명확한 메시지</h3>
-                <p>복잡한 정보를 누구나 이해할 수 있도록 정제합니다.</p>
-            </div>
-            <div class="value-item">
-                <span>Consistency</span>
-                <h3>일관된 경험</h3>
-                <p>모든 접점에서 동일한 브랜드 경험을 제공합니다.</p>
-            </div>
-            <div class="value-item">
-                <span>Execution</span>
-                <h3>실행 중심</h3>
-                <p>아이디어에 머무르지 않고 결과로 증명합니다.</p>
-            </div>
-        </div>
     </section>
 
 </main>
 
+<!-- ✅ Footer (카피라이트 복구 완료) -->
 <footer>
     &copy; 2026 BiztechOn. ALL RIGHTS RESERVED.
 </footer>
 
-<!-- Mobile Bottom Navigation -->
+<!-- ================= Mobile Bottom Nav ================= -->
 <nav class="mobile-nav">
-    index.htmlAll</a>
-    about.htmlAbout</a>
-    video.htmlVideo</a>
-    design.htmlDesign</a>
-    contact.html
-</nav>
-
-<script>
-    const currentPage = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
-    });
-</script>
-
-</body>
-</html>
