@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | BiztechOn</title>
+
+https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap
+
+<style>
+:root {
+  --header-h: 80px;
+  --bg: #fff;
+  --text: #111;
+  --sub: #888;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-h);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f0f0f0;
+  z-index: 1000;
+}
+.logo {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+nav ul li a {
+  font-family: 'Montserrat';
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--sub);
+}
+nav ul li a.active {
+  color: #000;
+  font-weight: 700;
+}
+
+/* Hero */
+.hero {
+  padding: 220px 4% 160px;
+}
+.hero span {
+  font-family: 'Montserrat';
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  color: var(--sub);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 25px;
+}
+.hero h1 {
+  font-family: 'Montserrat';
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 700;
+  letter-spacing: -4px;
+  text-transform: uppercase;
+}
+
+/* Sections */
+.section {
+  padding: 120px 4%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.section h2 {
+  font-family: 'Montserrat';
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.section p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 900px;
+}
+
+/* Core Grid */
+.core-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  margin-top: 80px;
+}
+.core-item h3 {
+  font-family: 'Montserrat';
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+.core-item p {
+  color: var(--sub);
+  font-size: 0.95rem;
+}
+
+/* Vision */
+.vision {
+  background: #f9f9f9;
+  padding: 140px 4%;
+  text-align: center;
+}
+.vision h2 {
+  font-family: 'Montserrat';
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+}
+.vision p {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #444;
+}
+
+footer {
+  padding: 60px 4%;
+  text-align: center;
+  border-top: 1px solid #eee;
+  font-family: 'Montserrat';
+  font-size: 0.7rem;
+  color: #ccc;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  .core-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  index.html
+  <nav>
+    <ul>
+      <li>index.htmlAll</a></li>
+      <li>about.htmlAbout</a></li>
+      <li>video.html</li>
+      <li>design.htmlDesign</a></li>
+      <li>contact.htmlContact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <span>About Us</span>
+  <h1>BiztechOn</h1>
+</section>
+
+<section class="section">
+  <h2>Overview</h2>
+  <p>
+    BiztechOn은 디지털 기술과 크리에이티브 역량을 기반으로  
+    영상, 디자인, 디지털 콘텐츠를 아우르는 통합 제작 서비스를 제공합니다.  
+    기업의 메시지를 명확하고 효과적으로 전달하는 것을 목표로 합니다.
+  </p>
+
+  <div class="core-grid">
+    <div class="core-item">
+      <h3>Video Contents</h3>
+      <p>홍보 영상, 교육 콘텐츠, 모션그래픽 등 목적 중심의 영상 제작</p>
+    </div>
+    <div class="core-item">
+      <h3>Design</h3>
+      <p>브랜딩, UI·UX, 카드뉴스, 사이니지 등 시각 커뮤니케이션 디자인</p>
+    </div>
+    <div class="core-item">
+      <h3>Digital Solution</h3>
+      <p>기업 환경에 최적화된 디지털 콘텐츠 및 운영 프로세스 지원</p>
+    </div>
+  </div>
+</section>
+
+<section class="vision">
+  <h2>Our Vision</h2>
+  <p>
+    BiztechOn은 기술과 디자인의 경계를 넘어  
+    기업과 사람을 연결하는 지속 가능한 디지털 경험을 만들어갑니다.
+  </p>
+</section>
+
+<footer>
+  © 2026 BiztechOn. ALL RIGHTS RESERVED.
+</footer>
+
+</body>
+</html>
