@@ -5,85 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | BiztechOn</title>
 
-<!-- ✅ 폰트는 반드시 link 태그 -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-    font-family:'Noto Sans KR',sans-serif;
+/* ========== Reset ========== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family:'Noto Sans KR', sans-serif;
     background:#fff;
     color:#111;
     line-height:1.6;
 }
-a{text-decoration:none;color:inherit}
+a { text-decoration:none; color:inherit; }
 
-/* Header */
-header{
+/* ========== Header ========== */
+header {
     position:fixed;
-    top:0;left:0;
-    width:100%;height:80px;
-    display:flex;justify-content:space-between;align-items:center;
+    top:0; left:0;
+    width:100%; height:80px;
     padding:0 4%;
-    background:#fff;
+    display:flex; justify-content:space-between; align-items:center;
+    background:rgba(255,255,255,0.95);
     border-bottom:1px solid #eee;
     z-index:1000;
 }
-.logo{
+.logo {
     font-family:'Montserrat';
     font-weight:700;
     font-size:1.25rem;
 }
-nav ul{
+nav ul {
     list-style:none;
     display:flex;
     gap:32px;
 }
-nav ul li a{
+nav ul li a {
     font-family:'Montserrat';
     font-size:.8rem;
     letter-spacing:1px;
     text-transform:uppercase;
     color:#888;
 }
-nav ul li a.active{
+nav ul li a.active {
     color:#000;
     font-weight:700;
 }
 
-/* Hero */
-.hero{
-    padding:200px 4% 100px;
+/* ========== Hero ========== */
+.hero {
+    padding:200px 4% 120px;
 }
-.hero span{
+.hero span {
+    display:block;
     font-family:'Montserrat';
     font-size:.8rem;
     letter-spacing:4px;
     color:#888;
     text-transform:uppercase;
 }
-.hero h1{
+.hero h1 {
     font-family:'Montserrat';
     font-size:4rem;
     margin-top:16px;
 }
 
-/* Contact */
-.contact{
+/* ========== Contact ========== */
+.contact {
     max-width:720px;
     margin:0 auto;
     padding:0 4% 160px;
 }
-.field{margin-bottom:30px}
-label{
+.field { margin-bottom:30px; }
+label {
     display:block;
+    font-family:'Montserrat';
     font-size:.75rem;
     letter-spacing:1px;
     color:#888;
     margin-bottom:8px;
-    font-family:'Montserrat';
 }
-input,textarea{
+input, textarea {
     width:100%;
     padding:14px 12px;
     border:none;
@@ -91,8 +95,10 @@ input,textarea{
     font-size:.9rem;
     outline:none;
 }
-textarea{min-height:120px}
-button{
+textarea { min-height:120px; resize:vertical; }
+input:focus, textarea:focus { border-bottom-color:#000; }
+
+button {
     margin-top:20px;
     padding:12px 30px;
     background:#000;
@@ -100,58 +106,66 @@ button{
     border:none;
     font-family:'Montserrat';
     font-size:.75rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
     cursor:pointer;
 }
-button:hover{opacity:.85}
+button:hover { opacity:.85; }
 
-#success{
+/* ✅ 완료 메시지 */
+#success {
     display:none;
     margin-top:40px;
+    font-family:'Montserrat';
     font-size:.85rem;
     letter-spacing:1px;
+    color:#333;
 }
 
-/* Footer */
-footer{
+/* ========== Footer ========== */
+footer {
     padding:60px 4%;
     text-align:center;
     border-top:1px solid #eee;
     font-family:'Montserrat';
     font-size:.7rem;
     color:#999;
+    letter-spacing:1px;
 }
 
-/* Mobile Nav */
-.mobile-nav{display:none}
-@media(max-width:900px){
-    header nav{display:none}
-    .mobile-nav{
+/* ========== Mobile Bottom Nav ========== */
+.mobile-nav { display:none; }
+@media (max-width:900px) {
+    header nav { display:none; }
+    .mobile-nav {
         display:flex;
         position:fixed;
-        bottom:0;left:0;
-        width:100%;height:56px;
+        bottom:0; left:0;
+        width:100%; height:56px;
         background:#fff;
         border-top:1px solid #eee;
+        z-index:1000;
     }
-    .mobile-nav a{
+    .mobile-nav a {
         flex:1;
         text-align:center;
         line-height:56px;
         font-family:'Montserrat';
         font-size:.65rem;
+        letter-spacing:1px;
         text-transform:uppercase;
         color:#aaa;
     }
-    .mobile-nav a.active{
+    .mobile-nav a.active {
         color:#000;
         font-weight:700;
     }
-    body{padding-bottom:60px}
+    body { padding-bottom:60px; }
 }
 </style>
 
 <script>
-async function sendForm(e){
+async function sendForm(e) {
     e.preventDefault();
 
     const data = {
@@ -160,22 +174,30 @@ async function sendForm(e){
         message: document.getElementById('message').value
     };
 
-    const FLOW_URL = "https://prod-xxxxxxxx.logic.azure.com/REPLACE_ME";
+    // ✅ Power Automate HTTP POST URL 입력
+    const FLOW_URL = "https://prod-xxxx.logic.azure.com/REPLACE_ME";
 
-    await fetch(FLOW_URL,{
-        method:"POST",
-        headers:{ "Content-Type":"application/json" },
-        body: JSON.stringify(data)
-    });
+    try {
+        await fetch(FLOW_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
 
-    document.getElementById('form').style.display="none";
-    document.getElementById('success').style.display="block";
+        // ✅ 폼 숨기고 완료 메시지 표시
+        document.getElementById('form').style.display = 'none';
+        document.getElementById('success').style.display = 'block';
+
+    } catch (err) {
+        alert("전송에 실패했습니다. 잠시 후 다시 시도해주세요.");
+    }
 }
 </script>
 </head>
 
 <body>
 
+<!-- Header -->
 <header>
     <a href="index.html" class="logo">BiztechOn</a>
     <nav>
@@ -200,20 +222,24 @@ async function sendForm(e){
             <label>Name</label>
             <input id="name" required>
         </div>
+
         <div class="field">
             <label>Email</label>
             <input type="email" id="email" required>
         </div>
+
         <div class="field">
             <label>Message</label>
             <textarea id="message" required></textarea>
         </div>
+
         <button type="submit">Send Message</button>
     </form>
 
+    <!-- ✅ 전송 완료 메시지 -->
     <div id="success">
         ✅ 메시지가 정상적으로 전송되었습니다.<br>
-        빠르게 확인 후 연락드리겠습니다.
+        빠르게 확인 후 연락드리겠습니다. 감사합니다.
     </div>
 </main>
 
