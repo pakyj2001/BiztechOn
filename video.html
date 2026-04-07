@@ -13,6 +13,7 @@
             --bg: #fff;
             --text: #111;
             --sub: #888;
+            --line: #e5e5e5;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,15 +27,19 @@
 
         a { text-decoration: none; color: inherit; transition: .3s; }
 
-        /* Header */
+        /* ================= Header ================= */
         header {
-            position: fixed; top: 0; left: 0;
-            width: 100%; height: var(--header-h);
-            display: flex; justify-content: space-between; align-items: center;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: var(--header-h);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 0 4%;
-            background: rgba(255,255,255,.95);
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid var(--line);
             z-index: 1000;
         }
 
@@ -44,29 +49,38 @@
             font-size: 1.25rem;
         }
 
-        nav ul { display: flex; gap: 35px; list-style: none; }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
 
         nav ul li a {
             font-family: 'Montserrat';
-            font-size: .8rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: var(--sub);
         }
 
-        nav ul li a.active { color: #000; font-weight: 700; }
+        nav ul li a.active {
+            color: #000;
+            font-weight: 700;
+        }
 
-        /* Hero */
-        .hero { padding: 220px 4% 120px; }
+        /* ================= Hero ================= */
+        .hero {
+            padding: 220px 4% 120px;
+        }
 
         .hero span {
+            display: block;
             font-family: 'Montserrat';
-            font-size: .8rem;
+            font-size: 0.8rem;
             letter-spacing: 4px;
             color: var(--sub);
             text-transform: uppercase;
-            display: block;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .hero h1 {
@@ -76,17 +90,19 @@
             letter-spacing: -3px;
         }
 
-        /* Grid */
+        /* ================= Grid (PC 3열) ================= */
         .grid {
             max-width: 1600px;
             margin: 0 auto;
             padding: 0 4% 120px;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 80px 40px;
+            grid-template-columns: repeat(3, 1fr); /* ✅ PC 3열 */
+            gap: 70px 40px;
         }
 
-        .item:hover img { transform: scale(1.05); }
+        .item:hover img {
+            transform: scale(1.05);
+        }
 
         .img-box {
             width: 100%;
@@ -102,11 +118,13 @@
             transition: .8s;
         }
 
-        .info { margin-top: 20px; }
+        .info {
+            margin-top: 18px;
+        }
 
         .info span {
             font-family: 'Montserrat';
-            font-size: .7rem;
+            font-size: 0.7rem;
             letter-spacing: 2px;
             color: var(--sub);
             text-transform: uppercase;
@@ -114,46 +132,64 @@
 
         .info h3 {
             font-family: 'Montserrat';
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-top: 6px;
             font-weight: 700;
         }
 
+        /* ================= Footer ================= */
         footer {
             padding: 60px 4%;
             text-align: center;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--line);
             font-family: 'Montserrat';
-            font-size: .7rem;
+            font-size: 0.7rem;
             color: #ccc;
             letter-spacing: 1px;
         }
 
-        /* Mobile Bottom Nav */
-        .mobile-nav { display: none; }
-
+        /* ================= Responsive ================= */
         @media (max-width: 900px) {
             header nav { display: none; }
-            .grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3rem; }
 
+            .grid {
+                grid-template-columns: repeat(2, 1fr); /* 태블릿 2열 */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr; /* 모바일 1열 */
+            }
+
+            body {
+                padding-bottom: 60px;
+            }
+        }
+
+        /* ================= Mobile Bottom Nav ================= */
+        .mobile-nav {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
             .mobile-nav {
                 display: flex;
-                position: fixed; bottom: 0; left: 0;
-                width: 100%; height: 56px;
-                background: rgba(255,255,255,.98);
-                border-top: 1px solid #e5e5e5;
+                position: fixed;
+                bottom: 0; left: 0;
+                width: 100%;
+                height: 56px;
+                background: rgba(255,255,255,0.98);
+                border-top: 1px solid var(--line);
                 z-index: 2000;
             }
 
             .mobile-nav a {
                 flex: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                text-align: center;
+                line-height: 56px;
                 font-family: 'Montserrat';
-                font-size: .65rem;
-                letter-spacing: 1px;
+                font-size: 0.65rem;
                 text-transform: uppercase;
                 color: #aaa;
             }
@@ -162,8 +198,6 @@
                 color: #000;
                 font-weight: 700;
             }
-
-            body { padding-bottom: 60px; }
         }
     </style>
 </head>
@@ -189,7 +223,7 @@
 </section>
 
 <main class="grid">
-    <!-- 9 Video Thumbnails -->
+
     <a href="#" class="item">
         <div class="img-box"><img src="https://via.placeholder.com/1280x720/111" alt=""></div>
         <div class="info"><span>Corporate</span><h3>Brand Film 2026</h3></div>
@@ -217,29 +251,31 @@
 
     <a href="#" class="item">
         <div class="img-box"><img src="https://via.placeholder.com/1280x720/666" alt=""></div>
-        <div class="info"><span>Corporate</span><h3>Vision Film</h3></div>
+        <div class="info"><span>Branding</span><h3>Vision Film</h3></div>
     </a>
 
     <a href="#" class="item">
         <div class="img-box"><img src="https://via.placeholder.com/1280x720/777" alt=""></div>
-        <div class="info"><span>Product</span><h3>UX Story</h3></div>
-    </a>
-
-    <a href="#" class="item">
-        <div class="img-box"><img src="https://via.placeholder.com/1280x720/888" alt=""></div>
         <div class="info"><span>Event</span><h3>Launch Video</h3></div>
     </a>
 
     <a href="#" class="item">
-        <div class="img-box"><img src="https://via.placeholder.com/1280x720/999" alt=""></div>
-        <div class="info"><span>Branding</span><h3>Identity Motion</h3></div>
+        <div class="img-box"><img src="https://via.placeholder.com/1280x720/888" alt=""></div>
+        <div class="info"><span>UX</span><h3>User Experience Story</h3></div>
     </a>
+
+    <a href="#" class="item">
+        <div class="img-box"><img src="https://via.placeholder.com/1280x720/999" alt=""></div>
+        <div class="info"><span>Motion</span><h3>Graphic Motion</h3></div>
+    </a>
+
 </main>
 
 <footer>
     &copy; 2026 BiztechOn. ALL RIGHTS RESERVED.
 </footer>
 
+<!-- Mobile Bottom Navigation -->
 <nav class="mobile-nav">
     <a href="index.html">All</a>
     <a href="about.html">About</a>
