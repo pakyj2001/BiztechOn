@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | BiztechOn</title>
 
-    https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -15,11 +15,7 @@
             --sub: #888;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Noto Sans KR', sans-serif;
@@ -28,26 +24,23 @@
             line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
 
         /* ================= Header ================= */
         header {
-            width: 100%;
-            height: var(--header-h);
             position: fixed;
             top: 0;
             left: 0;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #f0f0f0;
-            z-index: 1000;
+            width: 100%;
+            height: var(--header-h);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 4%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+            z-index: 1000;
         }
 
         .logo {
@@ -57,16 +50,16 @@
         }
 
         nav ul {
-            display: flex;
             list-style: none;
+            display: flex;
             gap: 35px;
         }
 
         nav ul li a {
             font-family: 'Montserrat';
             font-size: 0.8rem;
-            text-transform: uppercase;
             letter-spacing: 1px;
+            text-transform: uppercase;
             color: var(--sub);
         }
 
@@ -87,7 +80,7 @@
             letter-spacing: 4px;
             color: var(--sub);
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .hero h1 {
@@ -95,12 +88,11 @@
             font-size: clamp(3rem, 10vw, 6rem);
             font-weight: 700;
             letter-spacing: -3px;
-            text-transform: uppercase;
         }
 
-        /* ================= About Sections ================= */
+        /* ================= About ================= */
         .about {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 4% 120px;
         }
@@ -112,15 +104,14 @@
         .section h2 {
             font-family: 'Montserrat';
             font-size: 2rem;
-            font-weight: 700;
             margin-bottom: 20px;
             letter-spacing: -1px;
         }
 
         .section p {
-            max-width: 700px;
-            color: #444;
+            max-width: 680px;
             font-size: 0.95rem;
+            color: #444;
         }
 
         .values {
@@ -161,25 +152,11 @@
         }
 
         /* ================= Mobile Bottom Nav ================= */
-        .mobile-nav {
-            display: none;
-        }
+        .mobile-nav { display: none; }
 
         @media (max-width: 900px) {
-
-            header nav {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-                letter-spacing: -2px;
-            }
-
-            .values {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+            header nav { display: none; }
+            .values { grid-template-columns: 1fr; }
 
             .mobile-nav {
                 display: flex;
@@ -195,12 +172,10 @@
 
             .mobile-nav a {
                 flex: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                text-align: center;
+                line-height: 56px;
                 font-family: 'Montserrat';
                 font-size: 0.65rem;
-                letter-spacing: 1px;
                 text-transform: uppercase;
                 color: #aaa;
             }
@@ -210,9 +185,7 @@
                 font-weight: 700;
             }
 
-            body {
-                padding-bottom: 60px;
-            }
+            body { padding-bottom: 60px; }
         }
     </style>
 </head>
@@ -220,14 +193,14 @@
 <body>
 
 <header>
-    index.htmlBiztechOn</a>
+    <a href="index.html" class="logo">BiztechOn</a>
     <nav>
         <ul>
-            <li>index.htmlAll</a></li>
-            <li>about.htmlAbout</a></li>
-            <li>video.htmlVideo</a></li>
-            <li>design.html</li>
-            <li>contact.html</li>
+            <li><a href="index.html">All</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="design.html">Design</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -242,8 +215,8 @@
     <section class="section">
         <h2>BiztechOn</h2>
         <p>
-            BiztechOn은 디지털 기술과 비주얼 커뮤니케이션을 기반으로
-            기업의 메시지를 명확하고 효과적으로 전달하는
+            BiztechOn은 디지털 기술과 비주얼 커뮤니케이션을 기반으로  
+            기업의 메시지를 명확하고 효과적으로 전달하는  
             Digital Transformation & Visual Solution 파트너입니다.
         </p>
     </section>
@@ -252,31 +225,28 @@
         <h2>What We Do</h2>
         <p>
             브랜드 필름, 서비스 소개 영상, 비주얼 아이덴티티,
-            디자인 콘텐츠를 통해
-            비즈니스 본질을 직관적인 형태로 재구성합니다.
+            디자인 콘텐츠를 통해  
+            비즈니스의 본질을 직관적인 형태로 전달합니다.
         </p>
     </section>
 
     <section class="section">
         <h2>Our Values</h2>
-
         <div class="values">
             <div class="value-item">
                 <span>Clarity</span>
                 <h3>명확한 메시지</h3>
-                <p>복잡한 기술과 정보를 누구나 이해할 수 있도록 정제합니다.</p>
+                <p>복잡한 정보를 누구나 이해할 수 있도록 정제합니다.</p>
             </div>
-
             <div class="value-item">
                 <span>Consistency</span>
                 <h3>일관된 경험</h3>
-                <p>모든 접점에서 브랜드 경험의 흐름을 유지합니다.</p>
+                <p>모든 접점에서 동일한 브랜드 경험을 제공합니다.</p>
             </div>
-
             <div class="value-item">
                 <span>Execution</span>
                 <h3>실행 중심</h3>
-                <p>아이디어에 그치지 않고 결과물로 증명합니다.</p>
+                <p>아이디어에 머무르지 않고 결과로 증명합니다.</p>
             </div>
         </div>
     </section>
@@ -287,19 +257,17 @@
     &copy; 2026 BiztechOn. ALL RIGHTS RESERVED.
 </footer>
 
-<!-- Mobile Bottom Nav -->
+<!-- Mobile Bottom Navigation -->
 <nav class="mobile-nav">
-    index.html
-    about.html
-    video.html
-    design.html
-    contact.html
+    <a href="index.html">All</a>
+    <a href="about.html">About</a>
+    <a href="video.html">Video</a>
+    <a href="design.html">Design</a>
+    <a href="contact.html">Contact</a>
 </nav>
 
-<!-- Active Menu Auto Setting -->
 <script>
     const currentPage = location.pathname.split('/').pop() || 'index.html';
-
     document.querySelectorAll('nav a').forEach(link => {
         if (link.getAttribute('href') === currentPage) {
             link.classList.add('active');
