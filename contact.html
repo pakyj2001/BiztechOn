@@ -5,230 +5,177 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | BiztechOn</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- ✅ 폰트는 반드시 link 태그 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap">
 
 <style>
-/* ================= Reset ================= */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Noto Sans KR',sans-serif;
+    background:#fff;
+    color:#111;
+    line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
 
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background: #fff;
-    color: #111;
-    line-height: 1.6;
+/* Header */
+header{
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:80px;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:0 4%;
+    background:#fff;
+    border-bottom:1px solid #eee;
+    z-index:1000;
+}
+.logo{
+    font-family:'Montserrat';
+    font-weight:700;
+    font-size:1.25rem;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:32px;
+}
+nav ul li a{
+    font-family:'Montserrat';
+    font-size:.8rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#888;
+}
+nav ul li a.active{
+    color:#000;
+    font-weight:700;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+/* Hero */
+.hero{
+    padding:200px 4% 100px;
+}
+.hero span{
+    font-family:'Montserrat';
+    font-size:.8rem;
+    letter-spacing:4px;
+    color:#888;
+    text-transform:uppercase;
+}
+.hero h1{
+    font-family:'Montserrat';
+    font-size:4rem;
+    margin-top:16px;
 }
 
-/* ================= Header ================= */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    padding: 0 4%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #eee;
-    z-index: 1000;
+/* Contact */
+.contact{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 4% 160px;
+}
+.field{margin-bottom:30px}
+label{
+    display:block;
+    font-size:.75rem;
+    letter-spacing:1px;
+    color:#888;
+    margin-bottom:8px;
+    font-family:'Montserrat';
+}
+input,textarea{
+    width:100%;
+    padding:14px 12px;
+    border:none;
+    border-bottom:1px solid #ddd;
+    font-size:.9rem;
+    outline:none;
+}
+textarea{min-height:120px}
+button{
+    margin-top:20px;
+    padding:12px 30px;
+    background:#000;
+    color:#fff;
+    border:none;
+    font-family:'Montserrat';
+    font-size:.75rem;
+    cursor:pointer;
+}
+button:hover{opacity:.85}
+
+#success{
+    display:none;
+    margin-top:40px;
+    font-size:.85rem;
+    letter-spacing:1px;
 }
 
-.logo {
-    font-family: 'Montserrat';
-    font-weight: 700;
-    font-size: 1.25rem;
+/* Footer */
+footer{
+    padding:60px 4%;
+    text-align:center;
+    border-top:1px solid #eee;
+    font-family:'Montserrat';
+    font-size:.7rem;
+    color:#999;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 32px;
-}
-
-nav ul li a {
-    font-family: 'Montserrat';
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #888;
-}
-
-nav ul li a.active {
-    color: #000;
-    font-weight: 700;
-}
-
-/* ================= Hero ================= */
-.hero {
-    padding: 200px 4% 120px;
-}
-
-.hero span {
-    display: block;
-    font-family: 'Montserrat';
-    font-size: 0.8rem;
-    letter-spacing: 4px;
-    color: #888;
-    text-transform: uppercase;
-}
-
-.hero h1 {
-    font-family: 'Montserrat';
-    font-size: 4rem;
-    margin-top: 16px;
-}
-
-/* ================= Contact ================= */
-.contact {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 4% 120px;
-}
-
-.contact p {
-    margin-bottom: 40px;
-    color: #444;
-}
-
-.field {
-    margin-bottom: 30px;
-}
-
-label {
-    display: block;
-    font-family: 'Montserrat';
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #888;
-    margin-bottom: 8px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 14px 12px;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    font-size: 0.9rem;
-    font-family: 'Noto Sans KR', sans-serif;
-    outline: none;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-input:focus, textarea:focus {
-    border-bottom-color: #000;
-}
-
-button {
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: #000;
-    color: #fff;
-    border: none;
-    font-family: 'Montserrat';
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.85;
-}
-
-/* ================= Footer ================= */
-footer {
-    padding: 60px 4%;
-    text-align: center;
-    border-top: 1px solid #eee;
-    font-family: 'Montserrat';
-    font-size: 0.7rem;
-    color: #999;
-    letter-spacing: 1px;
-}
-
-/* ================= Mobile Bottom Nav ================= */
-.mobile-nav {
-    display: none;
-}
-
-@media (max-width: 900px) {
-    header nav {
-        display: none;
+/* Mobile Nav */
+.mobile-nav{display:none}
+@media(max-width:900px){
+    header nav{display:none}
+    .mobile-nav{
+        display:flex;
+        position:fixed;
+        bottom:0;left:0;
+        width:100%;height:56px;
+        background:#fff;
+        border-top:1px solid #eee;
     }
-
-    .mobile-nav {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 56px;
-        background: #fff;
-        border-top: 1px solid #eee;
-        z-index: 1000;
+    .mobile-nav a{
+        flex:1;
+        text-align:center;
+        line-height:56px;
+        font-family:'Montserrat';
+        font-size:.65rem;
+        text-transform:uppercase;
+        color:#aaa;
     }
-
-    .mobile-nav a {
-        flex: 1;
-        text-align: center;
-        line-height: 56px;
-        font-family: 'Montserrat';
-        font-size: 0.65rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #aaa;
+    .mobile-nav a.active{
+        color:#000;
+        font-weight:700;
     }
-
-    .mobile-nav a.active {
-        color: #000;
-        font-weight: 700;
-    }
-
-    body {
-        padding-bottom: 70px;
-    }
+    body{padding-bottom:60px}
 }
 </style>
 
 <script>
-function sendMail(event) {
-    event.preventDefault();
+async function sendForm(e){
+    e.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
 
-    const mailto =
-        "mailto:pyj4877@biztechon.com" +
-        "?subject=BiztechOn Contact Message" +
-        "&body=" +
-        encodeURIComponent(
-            "Name: " + name + "\n" +
-            "Email: " + email + "\n\n" +
-            message
-        );
+    const FLOW_URL = "https://prod-xxxxxxxx.logic.azure.com/REPLACE_ME";
 
-    window.location.href = mailto;
+    await fetch(FLOW_URL,{
+        method:"POST",
+        headers:{ "Content-Type":"application/json" },
+        body: JSON.stringify(data)
+    });
+
+    document.getElementById('form').style.display="none";
+    document.getElementById('success').style.display="block";
 }
 </script>
 </head>
 
 <body>
 
-<!-- Header -->
 <header>
     <a href="index.html" class="logo">BiztechOn</a>
     <nav>
@@ -248,29 +195,26 @@ function sendMail(event) {
 </section>
 
 <main class="contact">
-    <p>
-        프로젝트 문의, 협업 제안, 기타 궁금한 사항이 있다면<br>
-        아래 폼을 통해 언제든지 연락 주세요.
-    </p>
-
-    <form onsubmit="sendMail(event)">
+    <form id="form" onsubmit="sendForm(event)">
         <div class="field">
             <label>Name</label>
-            <input type="text" id="name" required>
+            <input id="name" required>
         </div>
-
         <div class="field">
             <label>Email</label>
             <input type="email" id="email" required>
         </div>
-
         <div class="field">
             <label>Message</label>
             <textarea id="message" required></textarea>
         </div>
-
         <button type="submit">Send Message</button>
     </form>
+
+    <div id="success">
+        ✅ 메시지가 정상적으로 전송되었습니다.<br>
+        빠르게 확인 후 연락드리겠습니다.
+    </div>
 </main>
 
 <footer>
